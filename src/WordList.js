@@ -1,7 +1,34 @@
 const words = [
-    { word: "genuine", sentence: "She has a genuine smile.", definition: "To be authentic and sincere." }
-    /* { word: "beautiful", sentence: "The sunset is so beautiful." },
-    { word: "persistent", sentence: "Her persistent efforts paid off." } */
-  ];
-  
-  export default words;
+  { word: "genuine", sentence: "She has a genuine smile.", definition: "To be authentic and sincere." },
+  { word: "accommodate", sentence: "The hotel can accommodate up to 100 guests.", definition: "To provide room or space for something or someone." },
+  { word: "conscience", sentence: "His conscience wouldn't let him lie.", definition: "An inner sense of right and wrong." },
+  { word: "embarrass", sentence: "I didn’t want to embarrass him in front of everyone.", definition: "To make someone feel awkward or ashamed." },
+  { word: "maintenance", sentence: "The car needs regular maintenance.", definition: "The process of preserving something in good condition." },
+  { word: "occurrence", sentence: "It was a rare occurrence.", definition: "Something that happens or takes place." },
+  { word: "recommend", sentence: "Can you recommend a good book?", definition: "To suggest something as being good or suitable." },
+  { word: "rhythm", sentence: "The music had a catchy rhythm.", definition: "A regular repeated pattern of sound or movement." },
+  { word: "separate", sentence: "We sleep in separate rooms.", definition: "To keep things or people apart." },
+  { word: "threshold", sentence: "She stood at the threshold of the room.", definition: "The entrance or beginning point of something." },
+  { word: "vacuum", sentence: "Use the vacuum to clean the floor.", definition: "A device that uses suction to clean." },
+  { word: "weird", sentence: "That movie was really weird.", definition: "Unusual or strange." },
+  { word: "commitment", sentence: "She made a commitment to exercise daily.", definition: "A promise or firm decision to do something." },
+  { word: "discipline", sentence: "He needs more discipline to study effectively.", definition: "The ability to control oneself or follow rules." },
+  { word: "existence", sentence: "The existence of life on other planets is unknown.", definition: "The state of being real or living." },
+  { word: "harass", sentence: "They were warned not to harass their classmates.", definition: "To bother or intimidate someone repeatedly." },
+  { word: "independent", sentence: "She became independent after moving out.", definition: "Self-sufficient and not reliant on others." },
+  { word: "judgment", sentence: "He used good judgment during the crisis.", definition: "The ability to make smart or sensible decisions." },
+  { word: "knowledge", sentence: "Reading increases your knowledge.", definition: "Facts, information, and skills acquired through experience or education." },
+  { word: "liaison", sentence: "She acted as a liaison between the teams.", definition: "A person who connects groups for communication." },
+  { word: "millennium", sentence: "The year 2000 marked a new millennium.", definition: "A period of 1,000 years." },
+  { word: "noticeable", sentence: "The stain was very noticeable.", definition: "Easily seen or recognized." },
+  { word: "occasionally", sentence: "We occasionally go out for dinner.", definition: "Happening from time to time." },
+  { word: "privilege", sentence: "It's a privilege to be here.", definition: "A special right or benefit enjoyed by a person or group." },
+  { word: "questionnaire", sentence: "Please fill out the questionnaire.", definition: "A written set of questions used for gathering information." },
+  { word: "receive", sentence: "Did you receive the email?", definition: "To get or be given something." },
+  { word: "schedule", sentence: "What's your schedule for today?", definition: "A plan for carrying out a process or activity." },
+  { word: "technique", sentence: "She has great painting technique.", definition: "A method of accomplishing something skillfully." },
+  { word: "unforeseen", sentence: "The trip was delayed by unforeseen circumstances.", definition: "Not expected or anticipated." },
+  { word: "visible", sentence: "The moon was clearly visible.", definition: "Able to be seen." }
+];
+
+export default words;
