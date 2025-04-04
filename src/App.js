@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
 import './App.css';
+import PlayAudioButton from './buttons/PlayAudioButton';
+import words from './WordList'; 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>Spell Right</p>
       </header>
+      {words.map((wordData, index) => (
+        <PlayAudioButton key={index} word={wordData.word} sentence={wordData.sentence} definition = {wordData.definition}/>
+      ))}
     </div>
   );
 }
 
 export default App;
+
