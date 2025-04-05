@@ -15,8 +15,6 @@ function App() {
   const [showCorrectSpelling, setShowCorrectSpelling] = useState(false)
 
   const handleRetry = () => {
-    // "Retry" means go back to home screen (i.e. the main screen),
-    // keep the same word, but increment tries
     setTryCount(prev => prev + 1);
     setShowIncorrect(false);
     setShowCorrectSpelling(false);
@@ -27,6 +25,13 @@ function App() {
     setShowIncorrect(false);
   };
 
+  const handleTryAgainFromCorrect = () => {
+    setTryCount(prev => prev + 1);
+    setShowCorrectSpelling(false);
+    setShowIncorrect(false);
+    setAnswer('');
+  };
+
   if (showIncorrect) {
     return (
       <IncorrectSpellingPage 
@@ -34,16 +39,10 @@ function App() {
         userAnswer={answer}
         onRetry = {handleRetry}
         onShowCorrect = {handleShowCorrect}
+        tryCount ={tryCount}
       />
     );
   }
-
-  const handleTryAgainFromCorrect = () => {
-    setTryCount(prev => prev + 1);
-    setShowCorrectSpelling(false);
-    setShowIncorrect(false);
-    setAnswer('');
-  };
 
   if (showCorrectSpelling) {
     return (

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
-const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect }) => {
+const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect, tryCount}) => {
     const userLower = userAnswer.toLowerCase();
 
     // Calculate the number of letters the user got correct.
@@ -65,7 +65,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
             onClick={onRetry}
             style={{ marginRight: '20px' }}
           >
-            Retry
+            Try Again {tryCount}/3
           </button>
           <button 
             className="Audio-button" 
@@ -74,7 +74,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
             Get Correct Spelling
           </button>
         </div>
-        
+
         </div>    
       </div>
     );
