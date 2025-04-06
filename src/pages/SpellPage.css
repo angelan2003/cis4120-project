@@ -54,4 +54,36 @@
     font-weight: bold;
     font-size: 40px;
 }
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+  }
+  
+  .submit-button {
+    background-color: #FADC48;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 40px;
+    cursor: pointer;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+  }
+  
+  .skip-button {
+    background-color: #8da5f3;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 40px;
+    cursor: pointer;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+  }
+  
   

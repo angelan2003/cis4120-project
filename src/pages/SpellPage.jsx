@@ -33,6 +33,16 @@ const SpellPage = () => {
     setAnswer('');
   };
 
+  const handleSubmit = () => {
+    const cleanedAnswer = answer.trim().toLowerCase();
+    const cleanedWord = currentWord.word.toLowerCase();
+    if (cleanedAnswer === cleanedWord) {
+      // show "you are correct" page 
+    } else {
+      setShowIncorrect(true);
+    }
+  };
+
   if (showIncorrect) {
     return (
       <IncorrectSpellingPage
@@ -57,13 +67,17 @@ const SpellPage = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Spell Right</p>
-      </header>
       <p className="Word-progress">Word {currentIndex + 1} out of {words.length}</p>
       <PlayAudioButton word={currentWord.word} sentence={currentWord.sentence} definition={currentWord.definition} />
       <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
-      <button> </button>
+      <div className="action-buttons">
+        <button className="submit-button" onClick={handleSubmit}>
+          Submit
+        </button>
+        <button className="skip-button">
+          Skip
+        </button>
+      </div>
     </div>
   );
 };
