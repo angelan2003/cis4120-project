@@ -33,7 +33,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
               textAlign: 'center',
               fontSize: '40px',
               fontWeight: 'bold',
-              color: isCorrect ? 'green' : 'transparent',
+              color: isCorrect ? 'white' : 'transparent',
               backgroundColor: isCorrect ? 'transparent' : 'white',
               border: '2px solid white'
             }}
