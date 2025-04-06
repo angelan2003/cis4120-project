@@ -1,0 +1,53 @@
+/* Header.css */
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.header-button-wrapper {
+    position: relative;
+    display: inline-block;
+}
+  
+.header-shadow {
+    background-color: #FADC48;
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: 0;
+}
+  
+.header-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 16px 24px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.header-text {
+    font-size: 20px;
+}
+  
+.header-icon {
+    font-size: 22px;
+}
+  
+  
