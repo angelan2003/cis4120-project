@@ -58,32 +58,23 @@
 .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 40px;
     margin-top: 20px;
-  }
+}
   
-  .submit-button {
-    background-color: #FADC48;
-    color: black;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 16px 40px;
-    cursor: pointer;
+.action-button {
+    position: relative;
     font-family: 'Atkinson Hyperlegible', sans-serif;
-  }
+    font-size: 22px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 16px 32px;
+    z-index: 1;
+    cursor: pointer;
+}
   
-  .skip-button {
-    background-color: #8da5f3;
-    color: black;
-    font-size: 28px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 16px 40px;
-    cursor: pointer;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-  }
   
   
