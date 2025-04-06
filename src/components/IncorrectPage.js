@@ -1,9 +1,8 @@
 import React from 'react';
-import '../App.css';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import '../pages/SpellPage.css';
 
 
 const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect, tryCount}) => {
@@ -47,7 +46,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
   
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="Spell-header">
           <p>Incorrect Spelling</p>
         </header>
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
