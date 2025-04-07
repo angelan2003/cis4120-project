@@ -10,6 +10,7 @@ const AnswerInput = ({ value, onChange }) => {
       placeholder="Type your answer"
       value={value}
       onChange={onChange}
+      spellCheck="false"
     />
   );
 };
