@@ -1,12 +1,19 @@
 /* Header.css */
 
+.header-wrapper {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: 100%;
+    padding: 30px 30px; 
+    box-sizing: border-box;
+}
+
 .header-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
-    margin-top: 20px;
 }
   
 .header-button-wrapper {
