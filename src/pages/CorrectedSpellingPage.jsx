@@ -12,12 +12,12 @@ const CorrectSpellingPage = ({ correctWord, onTryAgain, tryCount }) => {
        <p> {correctWord.toUpperCase()} </p>
       </header>
       <div>
-        <button 
-          className="Audio-button" 
-          onClick={onTryAgain}
-        >
-          Try Again {tryCount}/3
-        </button>
+      <div className="button-wrapper">
+        <div className="button-shadow" />
+          <button className="action-button">
+          Next Word
+          </button>
+        </div>
       </div>
     </div>
   );

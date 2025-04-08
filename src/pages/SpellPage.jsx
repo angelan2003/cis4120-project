@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import PlayAudioButton from '../components/PlayAudioButton';
 import words from '../WordList';
 import AnswerInput from '../components/AnswerInput';
-import IncorrectSpellingPage from '../components/IncorrectPage';
-import CorrectSpellingPage from '../components/CorrectedSpellingPage';
+import IncorrectSpellingPage from './IncorrectPage';
+import CorrectSpellingPage from './CorrectedSpellingPage';
 import './SpellPage.css';
 
 const SpellPage = () => {
-  const [answer, setAnswer] = useState("jenuine");
+  const [answer, setAnswer] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentWord = words[currentIndex];
-  const [showIncorrect, setShowIncorrect] = useState(true);
+  const [showIncorrect, setShowIncorrect] = useState(false);
   const [tryCount, setTryCount] = useState(0);
   const [showCorrectSpelling, setShowCorrectSpelling] = useState(false);
 

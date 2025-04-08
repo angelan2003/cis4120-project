@@ -57,25 +57,30 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
           <p className="Word-progress">
             You got {correctCount} out of {correctWord.length} letters correct!
           </p>
-
-          <div style={{ marginTop: '40px' }}>
-          <button 
-            className="Audio-button" 
-            onClick={onRetry}
-            style={{ marginRight: '20px' }}
-          >
-            Try Again {tryCount}/3
-          </button>
-          <button 
-            className="Audio-button" 
-            onClick={onShowCorrect}
-          >
-            Get Correct Spelling
-          </button>
         </div>
 
-        </div>    
-      </div>
+        <div className="action-buttons">
+          <div className="button-wrapper">
+            <div className="button-shadow" />
+              <button 
+                className="action-button"
+                onClick={onRetry}
+              >
+               Try Again {tryCount}/3
+              </button>
+            </div>
+
+          <div className="button-wrapper">
+            <div className="button-shadow" />
+              <button 
+                className="action-button"
+                onClick={onShowCorrect}
+              >
+               Show Correct Spelling
+              </button>
+            </div>
+          </div>
+      </div>    
     );
   };
   
