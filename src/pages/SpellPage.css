@@ -35,10 +35,10 @@
     border: none;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
-    width: 600px;
-    height: 50px;
+    width: 800px;
+    height: 10px;
     outline: none;
     padding: 30px 20px;
     margin: 20px 0;
@@ -58,7 +58,7 @@
 .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 80px;
     margin-top: 20px;
 }
   
@@ -79,10 +79,16 @@
 .button-wrapper {
     position: relative;
     display: inline-block;
-  }
-  
-  .button-shadow {
-    background-color: #FADC48;
+}
+
+.audio-button-row {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    margin: 40px 0;
+}
+
+.button-shadow {
     position: absolute;
     top: 6px;
     left: -6px;
@@ -90,4 +96,14 @@
     height: 100%;
     border-radius: 8px;
     z-index: 0;
-  }
+}
+  
+.button-wrapper.green-shadow .button-shadow {
+    background-color: #40FF80;
+}
+  
+.button-wrapper.blue-shadow .button-shadow {
+    background-color: #00FFFF;
+}
+  
+  

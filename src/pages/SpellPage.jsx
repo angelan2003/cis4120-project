@@ -1,6 +1,8 @@
 // src/pages/SpellPage.jsx
 import React, { useState } from 'react';
 import PlayAudioButton from '../components/PlayAudioButton';
+import WordOptionButton from '../components/WordOptionButton';
+import { faVolumeHigh, faComment, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import words from '../WordList';
 import AnswerInput from '../components/AnswerInput';
 import IncorrectSpellingPage from './IncorrectPage';
@@ -78,17 +80,21 @@ const SpellPage = () => {
   return (
     <div className="App">
       <p className="Word-progress">Word {currentIndex + 1} out of {words.length}</p>
-      <PlayAudioButton word={currentWord.word} sentence={currentWord.sentence} definition={currentWord.definition} />
+      <div className="audio-button-row">
+        <WordOptionButton icon={faVolumeHigh} label="Play word" textToSpeak={currentWord.word} />
+        <WordOptionButton icon={faComment} label="Sentence" textToSpeak={currentWord.sentence} />
+        <WordOptionButton icon={faBookOpen} label="Definition" textToSpeak={currentWord.definition} />
+      </div>
       <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
       <div className="action-buttons">
-        <div className="button-wrapper">
+        <div className="button-wrapper green-shadow">
           <div className="button-shadow" />
           <button className="action-button" onClick={handleSubmit}>
             Submit
           </button>
         </div>
 
-        <div className="button-wrapper">
+        <div className="button-wrapper blue-shadow">
           <div className="button-shadow" />
           <button className="action-button">
             Skip
