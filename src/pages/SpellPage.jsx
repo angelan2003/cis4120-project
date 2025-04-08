@@ -71,12 +71,19 @@ const SpellPage = () => {
       <PlayAudioButton word={currentWord.word} sentence={currentWord.sentence} definition={currentWord.definition} />
       <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
       <div className="action-buttons">
-        <button className="action-button" onClick={handleSubmit}>
-          Submit
-        </button>
-        <button className="action-button">
-          Skip
-        </button>
+        <div className="button-wrapper">
+          <div className="button-shadow" />
+          <button className="action-button" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
+
+        <div className="button-wrapper">
+          <div className="button-shadow" />
+          <button className="action-button">
+            Skip
+          </button>
+        </div>
       </div>
     </div>
   );
