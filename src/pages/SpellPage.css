@@ -51,10 +51,10 @@
     border: none;
     border-radius: 10px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
-    width: 600px;
-    height: 50px;
+    width: 800px;
+    height: 10px;
     outline: none;
     padding: 30px 20px;
     margin: 20px 0;
@@ -75,6 +75,7 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-top: 20px;
 }
   
 .action-button {
@@ -94,15 +95,30 @@
 .button-wrapper {
     position: relative;
     display: inline-block;
-  }
-  
-  .button-shadow {
-    background-color: #FADC48;
+}
+
+.audio-button-row {
+    display: flex;
+    justify-content: center;
+    gap: 110px;
+    margin: 40px 0;
+}
+
+.button-shadow {
     position: absolute;
     top: 6px;
     left: -6px;
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    z-index: 0;
-  }
+}
+  
+.button-wrapper.green-shadow .button-shadow {
+    background-color: #40FF80;
+}
+  
+.button-wrapper.blue-shadow .button-shadow {
+    background-color: #00FFFF;
+}
+  
+  
