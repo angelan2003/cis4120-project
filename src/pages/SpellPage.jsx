@@ -18,7 +18,6 @@ const SpellPage = () => {
   const [showCorrectPage, setShowCorrectPage] = useState(false);
 
   const handleRetry = () => {
-    setTryCount(prev => prev + 1);
     setShowIncorrect(false);
     setShowCorrectSpelling(false);
   };
@@ -38,11 +37,29 @@ const SpellPage = () => {
   const handleSubmit = () => {
     const cleanedAnswer = answer.trim().toLowerCase();
     const cleanedWord = currentWord.word.toLowerCase();
+  
     if (cleanedAnswer === cleanedWord) {
-      setShowCorrectPage(true); 
+      setShowCorrectPage(true);
     } else {
-      setShowIncorrect(true);
+      const newTryCount = tryCount + 1;
+      setTryCount(newTryCount);
+  
+      if (newTryCount >= 3) {
+        setShowCorrectSpelling(true);
+        setShowIncorrect(false);
+      } else {
+        setShowIncorrect(true);
+      }
     }
+  };
+
+  const handleNextWord = () => {
+    setCurrentIndex(prev => prev + 1);
+    setAnswer('');
+    setTryCount(0);
+    setShowCorrectPage(false);
+    setShowCorrectSpelling(false);
+    setShowIncorrect(false);
   };
 
   if (showIncorrect) {
@@ -63,6 +80,7 @@ const SpellPage = () => {
         correctWord={currentWord.word}
         onTryAgain={handleTryAgainFromCorrect}
         tryCount={tryCount}
+        onNextWord={handleNextWord}
       />
     );
   }
@@ -71,6 +89,7 @@ const SpellPage = () => {
     return (
       <CorrectPage
         correctWord={currentWord.word}
+        onNextWord={handleNextWord}
       />
     );
   }
@@ -90,7 +109,7 @@ const SpellPage = () => {
 
         <div className="button-wrapper">
           <div className="button-shadow" />
-          <button className="action-button">
+          <button className="action-button" onClick={handleNextWord}>
             Skip
           </button>
         </div>

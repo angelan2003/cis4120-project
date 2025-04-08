@@ -1,5 +1,21 @@
 /* SpellPage.css */
 
+.App {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Incorrect-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .Spell-header {
     font-size: 64px;
     font-weight: bold;
@@ -59,7 +75,6 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 20px;
 }
   
 .action-button {
