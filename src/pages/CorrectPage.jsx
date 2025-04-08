@@ -1,0 +1,30 @@
+import React from 'react';
+import '../pages/SpellPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
+
+
+const CorrectPage = ({ correctWord }) => {
+  return (
+    <div className="App">
+      <header className="Spell-header" style={{ marginTop: 100, padding: 0, color: "white"}}>
+        <p >Correct!</p>
+      </header>
+      <FontAwesomeIcon icon={faCheck} size="10x" style={{ color: "#ffffff"}} />
+      <header className="Spell-header" style={{color: "white"}}>
+       <p> {correctWord.toUpperCase()} </p>
+      </header>
+      <div>
+      <div className="button-wrapper">
+        <div className="button-shadow" />
+          <button className="action-button">
+          Next Word
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CorrectPage;

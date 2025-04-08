@@ -5,6 +5,7 @@ import words from '../WordList';
 import AnswerInput from '../components/AnswerInput';
 import IncorrectSpellingPage from './IncorrectPage';
 import CorrectSpellingPage from './CorrectedSpellingPage';
+import CorrectPage from './CorrectPage';
 import './SpellPage.css';
 
 const SpellPage = () => {
@@ -14,6 +15,7 @@ const SpellPage = () => {
   const [showIncorrect, setShowIncorrect] = useState(false);
   const [tryCount, setTryCount] = useState(0);
   const [showCorrectSpelling, setShowCorrectSpelling] = useState(false);
+  const [showCorrectPage, setShowCorrectPage] = useState(false);
 
   const handleRetry = () => {
     setTryCount(prev => prev + 1);
@@ -37,7 +39,7 @@ const SpellPage = () => {
     const cleanedAnswer = answer.trim().toLowerCase();
     const cleanedWord = currentWord.word.toLowerCase();
     if (cleanedAnswer === cleanedWord) {
-      // show "you are correct" page 
+      setShowCorrectPage(true); 
     } else {
       setShowIncorrect(true);
     }
@@ -61,6 +63,14 @@ const SpellPage = () => {
         correctWord={currentWord.word}
         onTryAgain={handleTryAgainFromCorrect}
         tryCount={tryCount}
+      />
+    );
+  }
+
+  if (showCorrectPage) {
+    return (
+      <CorrectPage
+        correctWord={currentWord.word}
       />
     );
   }
