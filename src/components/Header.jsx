@@ -10,7 +10,7 @@ const Header = ({ onHomeClick, onSettingsClick }) => {
     <div className="header-wrapper">
       <div className="header-container">
         <div className="header-left">
-          <img src={logo} alt="Spell Right" className="header-logo" />
+          <img src={logo} alt="Home" className="header-logo" />
           <div className="header-button-wrapper">
             <div className="header-shadow" />
             <button className="header-button" onClick={onHomeClick}>
