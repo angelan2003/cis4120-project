@@ -19,6 +19,7 @@
 .header-button-wrapper {
     position: relative;
     display: inline-block;
+    margin-left: 8px;
 }
   
 .header-shadow {
@@ -56,5 +57,19 @@
 .header-icon {
     font-size: 22px;
 }
+
+.header-logo {
+    height: 60px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+  
+  
   
   
