@@ -18,24 +18,28 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
     const renderLetterComparison = () => {
       return correctWord.split('').map((letter, index) => {
         const isCorrect = userLower[index] && userLower[index] === letter.toLowerCase();
+        const ariaLabel = isCorrect ? `${letter}` : 'incorrect letter';
+        const content = isCorrect ? letter : "?";
+
         return (
           <span
             key={index}
             style={{
               display: 'inline-block',
-              width: '40px',
+              width: '60px',
               height: '60px',
               lineHeight: '60px',
               margin: '0 5px',
               textAlign: 'center',
               fontSize: '40px',
               fontWeight: 'bold',
-              color: isCorrect ? 'white' : 'transparent',
-              backgroundColor: isCorrect ? 'transparent' : 'white',
+              color: 'white',
               border: '2px solid white'
+
             }}
+            aria-placeholder={ariaLabel}
           >
-            {isCorrect ? letter : letter}
+            {content}
           </span>
         );
       });

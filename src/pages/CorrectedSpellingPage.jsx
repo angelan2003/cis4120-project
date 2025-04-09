@@ -9,7 +9,7 @@ const CorrectSpellingPage = ({ correctWord, onNextWord }) => {
         <p >Correct Spelling:</p>
       </header>
       <header className="Spell-header" style={{color: "white"}}>
-       <p> {correctWord.toUpperCase()} </p>
+        <p>{correctWord.toUpperCase().split('').join(' ')}</p>
       </header>
       <div>
       <div className="button-wrapper">
