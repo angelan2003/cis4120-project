@@ -8,7 +8,6 @@ import '../pages/SpellPage.css';
 const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect, tryCount}) => {
     const userLower = userAnswer.toLowerCase();
 
-    // Calculate the number of letters the user got correct.
     const correctCount = correctWord.split('').reduce((acc, letter, index) => {
         if (userLower[index] && userLower[index] === letter.toLowerCase()) {
             return acc + 1;
@@ -16,10 +15,8 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
             return acc;
     }, 0);
 
-    // Create a letter-by-letter display comparing correctWord and userAnswer
     const renderLetterComparison = () => {
       return correctWord.split('').map((letter, index) => {
-        // Compare letter at same index if exists in user's answer
         const isCorrect = userLower[index] && userLower[index] === letter.toLowerCase();
         return (
           <span
@@ -46,18 +43,18 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
   
     return (
       <div className="App">
-        <header className="Spell-header">
+        <div className="Spell-header">
           <p>Incorrect Spelling</p>
-        </header>
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <FontAwesomeIcon icon={faXmark} size="10x" style={{ color: "#ffffff"}} />
-          <div style={{ marginTop: '10px' }}>
-            {renderLetterComparison()}
-          </div>
-          <p className="Word-progress">
-            You got {correctCount} out of {correctWord.length} letters correct!
-          </p>
         </div>
+        <div style={{ textAlign: 'center'}}>
+          <FontAwesomeIcon icon={faXmark} size="10x" style={{ color: "#ffffff"}} />
+        </div>  
+        <div style={{ marginTop: '10px' }}>
+          {renderLetterComparison()}
+        </div>
+        <p className="Word-progress">
+          You got {correctCount} out of {correctWord.length} letters correct!
+        </p>
 
         <div className="action-buttons">
           <div className="button-wrapper">

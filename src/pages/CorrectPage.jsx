@@ -17,7 +17,7 @@ const CorrectPage = ({ correctWord, onNextWord }) => {
       <div>
         <div className="button-wrapper">
           <div className="button-shadow" />
-          <button className="action-button" onClick={onNextWord}>
+          <button className="action-button" style={{ margin: '20px' }} onClick={onNextWord}>
             Next Word
           </button>
         </div>
