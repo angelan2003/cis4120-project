@@ -2,7 +2,7 @@ import React from 'react';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../pages/SpellPage.css';
+import '../pages/IncorrectPage.css';
 
 
 const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect, tryCount}) => {
@@ -57,7 +57,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
         </p>
 
         <div className="action-buttons">
-          <div className="button-wrapper">
+          <div className="button-wrapper green-shadow">
             <div className="button-shadow" />
               <button 
                 className="action-button"
@@ -67,7 +67,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
               </button>
             </div>
 
-          <div className="button-wrapper">
+          <div className="button-wrapper blue-shadow">
             <div className="button-shadow" />
               <button 
                 className="action-button"
