@@ -46,6 +46,11 @@
     font-size: 40px;
     padding: 30px 20px;
 }
+
+.audio-button:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+}
   
 .answer-input {
     background-color: white;
@@ -95,6 +100,11 @@
     cursor: pointer;
 } 
 
+.action-button:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+}
+
 .button-wrapper {
     position: relative;
     display: inline-block;
@@ -123,5 +133,54 @@
 .button-wrapper.blue-shadow .button-shadow {
     background-color: #00FFFF;
 }
+
+.button-wrapper.yellow-shadow .button-shadow {
+    background-color: #FADC48;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+    gap: 110px;
+}
   
+.home-button {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 16px 32px;
+    z-index: 1;
+    cursor: pointer;
+} 
+
+.home-button:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+}
+
+.difficulty-header {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.home-button.selected {
+    background-color: #333333;
+  }
   

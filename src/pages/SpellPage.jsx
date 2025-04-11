@@ -1,16 +1,31 @@
-// src/pages/SpellPage.jsx
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PlayAudioButton from '../components/PlayAudioButton';
 import WordOptionButton from '../components/WordOptionButton';
 import { faVolumeHigh, faComment, faBookOpen } from '@fortawesome/free-solid-svg-icons';
-import words from '../WordList';
 import AnswerInput from '../components/AnswerInput';
 import IncorrectSpellingPage from './IncorrectPage';
 import CorrectSpellingPage from './CorrectedSpellingPage';
 import CorrectPage from './CorrectPage';
 import './SpellPage.css';
 
+// 🆕 Utility for loading wordlist dynamically
+const importWordList = (difficulty, category) => {
+  try {
+    // Dynamically require based on pattern
+    return require(`../wordlists/${difficulty}-${category}.js`).default;
+  } catch (error) {
+    console.error(`Wordlist for ${difficulty}-${category} not found.`);
+    return [];
+  }
+};
+
 const SpellPage = () => {
+  const location = useLocation();
+  const { difficulty, category } = location.state || {};
+
+  const words = importWordList(difficulty, category);
+
   const [answer, setAnswer] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentWord = words[currentIndex];
@@ -18,6 +33,14 @@ const SpellPage = () => {
   const [tryCount, setTryCount] = useState(0);
   const [showCorrectSpelling, setShowCorrectSpelling] = useState(false);
   const [showCorrectPage, setShowCorrectPage] = useState(false);
+
+  if (!difficulty || !category) {
+    return <p style={{ color: 'white' }}>Missing difficulty or category. Go back and select both.</p>;
+  }
+
+  if (!words.length) {
+    return <p style={{ color: 'white' }}>No words available for this selection.</p>;
+  }
 
   const handleRetry = () => {
     setShowIncorrect(false);
@@ -39,13 +62,13 @@ const SpellPage = () => {
   const handleSubmit = () => {
     const cleanedAnswer = answer.trim().toLowerCase();
     const cleanedWord = currentWord.word.toLowerCase();
-  
+
     if (cleanedAnswer === cleanedWord) {
       setShowCorrectPage(true);
     } else {
       const newTryCount = tryCount + 1;
       setTryCount(newTryCount);
-  
+
       if (newTryCount >= 3) {
         setShowCorrectSpelling(true);
         setShowIncorrect(false);

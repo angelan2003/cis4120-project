@@ -1,4 +1,4 @@
-const words = [
+const mediumGeneralWords = [
   { word: "genuine", sentence: "She has a genuine smile.", definition: "To be authentic and sincere." },
   { word: "accommodate", sentence: "The hotel can accommodate up to 100 guests.", definition: "To provide room or space for something or someone." },
   { word: "conscience", sentence: "His conscience wouldn't let him lie.", definition: "An inner sense of right and wrong." },
@@ -31,4 +31,4 @@ const words = [
   { word: "visible", sentence: "The moon was clearly visible.", definition: "Able to be seen." }
 ];
 
-export default words;
+export default mediumGeneralWords;

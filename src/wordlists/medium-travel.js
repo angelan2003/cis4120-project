@@ -1,0 +1,35 @@
+const mediumTravelWords = [
+    { word: "itinerary", sentence: "Our itinerary includes visits to three different cities.", definition: "A detailed plan or route of a journey." },
+    { word: "excursion", sentence: "We went on a day-long excursion to the nearby ruins.", definition: "A short journey for pleasure." },
+    { word: "souvenir", sentence: "She bought a small souvenir to remember her trip.", definition: "An item kept as a reminder of a place or event." },
+    { word: "customs", sentence: "We had to declare items at customs upon arrival.", definition: "The place at an airport or border where officials check goods." },
+    { word: "embassy", sentence: "We visited the embassy to renew our travel documents.", definition: "The official office of one country's government in another country." },
+    { word: "transit", sentence: "We had a long layover during our transit through Dubai.", definition: "The act of passing through a place on the way to another." },
+    { word: "landmark", sentence: "The Eiffel Tower is a famous landmark in Paris.", definition: "An important or well-known building or place." },
+    { word: "currency", sentence: "You should exchange your currency before traveling.", definition: "The money used in a particular country." },
+    { word: "resort", sentence: "They spent their vacation at a beach resort.", definition: "A place where people go to relax or have fun." },
+    { word: "hostel", sentence: "Backpackers often stay in a hostel to save money.", definition: "A budget place to stay with shared rooms." },
+    { word: "adventure", sentence: "The hike turned into an unexpected adventure.", definition: "An exciting or unusual experience." },
+    { word: "navigation", sentence: "Good navigation is essential when exploring new places.", definition: "The process of finding the way to a place." },
+    { word: "hiking", sentence: "We spent the afternoon hiking up the mountain.", definition: "Walking for pleasure in the countryside or mountains." },
+    { word: "lounge", sentence: "We waited in the airport lounge before our flight.", definition: "A comfortable room for relaxing, often at airports or hotels." },
+    { word: "departure", sentence: "Our departure is scheduled for 10 AM.", definition: "The act of leaving a place." },
+    { word: "arrival", sentence: "The arrival time was earlier than expected.", definition: "The act of reaching a place." },
+    { word: "accommodation", sentence: "We booked our accommodation in advance.", definition: "A place where travelers can sleep or stay." },
+    { word: "guidebook", sentence: "The guidebook listed all the popular attractions.", definition: "A book that gives information about a place." },
+    { word: "journey", sentence: "The journey took longer than we expected.", definition: "The act of traveling from one place to another." },
+    { word: "jetlag", sentence: "He was tired from jetlag after the long flight.", definition: "Tiredness caused by traveling across time zones." },
+    { word: "booking", sentence: "She made a booking for the hotel online.", definition: "An arrangement to reserve something in advance." },
+    { word: "terminal", sentence: "We waited at the airport terminal for our flight.", definition: "A building where passengers get on or off transportation." },
+    { word: "visa", sentence: "You need a visa to enter that country.", definition: "An official document that allows you to enter or stay in a country." },
+    { word: "backpack", sentence: "He carried everything in a single backpack.", definition: "A bag worn on the back, often used for travel or hiking." },
+    { word: "climate", sentence: "The climate in that region is very dry.", definition: "The usual weather in a particular place." },
+    { word: "excite", sentence: "She was excited to explore new cultures.", definition: "To feel happy or eager about something." },
+    { word: "explore", sentence: "We love to explore new cities and try local food.", definition: "To travel around and learn about a place." },
+    { word: "journey", sentence: "The journey took us across four countries.", definition: "The act of traveling from one place to another." },
+    { word: "guide", sentence: "Our guide explained the history of the castle.", definition: "A person who shows others around a place." },
+    { word: "adventure", sentence: "Every trip is an adventure waiting to happen.", definition: "An exciting or daring experience." }
+  ];
+  
+  export default mediumTravelWords;
+  

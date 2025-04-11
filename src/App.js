@@ -3,6 +3,7 @@ import React from 'react';
 import SpellPage from './pages/SpellPage';
 import IncorrectSpellingPage from './pages/IncorrectPage';
 import CorrectPage from './pages/CorrectPage';
+import HomePage from './pages/HomePage';
 import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -12,10 +13,11 @@ import CorrectSpellingPage from './pages/CorrectedSpellingPage';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
+        <Header />
         <Routes>
-          <Route path="/" element={<SpellPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/HomePage" element={<HomePage />} />
           <Route path="/SpellPage" element={<SpellPage />} />
           <Route path="/IncorrectSpellingPage" element={<IncorrectSpellingPage correctWord={''} userAnswer={''}/>} />
           <Route path="/CorrectSpellingPage" element={<CorrectSpellingPage correctWord={''}/>} />

@@ -1,0 +1,35 @@
+const hardTravelWords = [
+    { word: "expatriate", sentence: "He became an expatriate after accepting a job abroad.", definition: "A person who lives outside their native country." },
+    { word: "peregrination", sentence: "Their peregrination across continents lasted two years.", definition: "A long and meandering journey." },
+    { word: "intermittent", sentence: "They faced intermittent delays due to the weather.", definition: "Occurring at irregular intervals; not continuous." },
+    { word: "circumnavigate", sentence: "They planned to circumnavigate the globe by boat.", definition: "To travel all the way around something, especially the world." },
+    { word: "bureaucracy", sentence: "Navigating the visa bureaucracy can be time-consuming.", definition: "A system of government or management with complex rules and procedures." },
+    { word: "quarantine", sentence: "The travelers had to quarantine for ten days.", definition: "A period of isolation to prevent the spread of disease." },
+    { word: "repatriate", sentence: "The government helped repatriate citizens stranded overseas.", definition: "To return someone to their own country." },
+    { word: "topography", sentence: "The topography of the region made travel difficult.", definition: "The physical features of an area of land." },
+    { word: "cartography", sentence: "Her interest in cartography helped her map the journey.", definition: "The science or practice of drawing maps." },
+    { word: "ambassador", sentence: "The ambassador hosted a reception for international travelers.", definition: "An official representative of a country in a foreign land." },
+    { word: "concierge", sentence: "The concierge arranged our restaurant reservations and tours.", definition: "A hotel employee who assists guests with services." },
+    { word: "proximity", sentence: "The hotel’s proximity to the airport was convenient.", definition: "Nearness in space, time, or relationship." },
+    { word: "ephemeral", sentence: "The desert bloom was an ephemeral travel experience.", definition: "Lasting for a very short time." },
+    { word: "unforeseen", sentence: "Unforeseen circumstances caused us to change our plans.", definition: "Not anticipated or predicted." },
+    { word: "logistics", sentence: "The logistics of planning the multi-country tour were complex.", definition: "The detailed coordination of a complex operation." },
+    { word: "navigational", sentence: "Navigational tools helped sailors find their route.", definition: "Related to the act of determining position and course." },
+    { word: "immigration", sentence: "Immigration procedures vary greatly between countries.", definition: "The process of entering and settling in a foreign country." },
+    { word: "itinerant", sentence: "The itinerant lifestyle suited her adventurous spirit.", definition: "Traveling from place to place, especially for work." },
+    { word: "pilgrimage", sentence: "They went on a spiritual pilgrimage to a holy site.", definition: "A journey to a sacred place for religious reasons." },
+    { word: "sabbatical", sentence: "He took a sabbatical to travel and recharge.", definition: "A break from work, often used for travel or study." },
+    { word: "nomadic", sentence: "The nomadic tribe moved with the seasons.", definition: "Living the life of a wanderer, without a fixed home." },
+    { word: "turbulence", sentence: "The flight had turbulence as it passed through a storm.", definition: "Irregular air motion, causing bumpiness in flights." },
+    { word: "cosmopolitan", sentence: "She enjoyed the cosmopolitan feel of international cities.", definition: "Familiar with and at ease in many different cultures." },
+    { word: "documentation", sentence: "Always carry the proper documentation when traveling abroad.", definition: "Official papers required for identification or permissions." },
+    { word: "intercontinental", sentence: "They took an intercontinental flight from Asia to Europe.", definition: "Traveling between continents." },
+    { word: "asylum", sentence: "The traveler applied for political asylum.", definition: "Protection granted by a country to someone fleeing danger or persecution." },
+    { word: "layover", sentence: "We had a five-hour layover in Dubai before the next flight.", definition: "A short stay between parts of a journey, especially a flight." },
+    { word: "wayfinding", sentence: "The airport’s signs improved passenger wayfinding.", definition: "The process of navigating and orienting oneself in a space." },
+    { word: "infrastructure", sentence: "Poor infrastructure made travel in the region difficult.", definition: "Basic physical systems like roads and airports needed for operation." },
+    { word: "trekking", sentence: "They spent a week trekking through the mountains.", definition: "The activity of going on a long and difficult journey, usually on foot." }
+  ];
+  
+  export default hardTravelWords;
+  
