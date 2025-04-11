@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logos/logo.png';
 
 const Header = ({ onSettingsClick }) => {
@@ -15,7 +15,14 @@ const Header = ({ onSettingsClick }) => {
     <div className="header-wrapper">
       <div className="header-container">
         <div className="header-left">
-          <img src={logo} alt="Home" className="header-logo" />
+          <button
+            onClick={handleHomeClick}
+            className="logo-button"
+            aria-label="Spell Right logo, link to home page"
+          >
+            <img src={logo} alt="App Logo" className="header-logo" />
+          </button>
+
           <div className="header-button-wrapper">
             <div className="header-shadow" />
             <button className="header-button" onClick={handleHomeClick}>
