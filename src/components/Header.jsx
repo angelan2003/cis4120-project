@@ -3,6 +3,7 @@ import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import AccessibilityMenu from './AccessibilityMenu';
 import logo from '../assets/logos/logo.png';
 
 const Header = ({ onSettingsClick }) => {
@@ -33,11 +34,7 @@ const Header = ({ onSettingsClick }) => {
         </div>
 
         <div className="header-button-wrapper">
-          <div className="header-shadow" />
-          <button className="header-button" onClick={onSettingsClick}>
-            <span className="header-text">Text Size & Contrast</span>
-            <FontAwesomeIcon icon={faAngleDown} className="header-icon" />
-          </button>
+          <AccessibilityMenu />
         </div>
       </div>
     </div>
