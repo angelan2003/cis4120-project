@@ -60,7 +60,7 @@ const HomePage = () => {
       </div>
 
       {(difficulty && category) && (
-        <p className="Spell-header" style={{ color: 'white', fontSize: '24px', marginTop: '20px' }}>
+        <p className="Spell-header" style={{ fontSize: '24px', marginTop: '20px' }}>
           You selected: <strong>{difficulty}</strong> difficulty in <strong>{category}</strong> category.
         </p>
       )}

@@ -14,8 +14,8 @@ const speak = (text) => {
 
 const WordOptionButton = ({ icon, label, textToSpeak }) => {
   return (
-    <div className="button-wrapper">
-      <div className="word-option-button-shadow" />
+    <div className="button-wrapper primary-button-shadow">
+      <div className="audio-button-shadow"/>
       <button className="square-button" onClick={() => speak(textToSpeak)}>
         <FontAwesomeIcon icon={icon} className="square-icon" />
         <span className="square-text">{label}</span>

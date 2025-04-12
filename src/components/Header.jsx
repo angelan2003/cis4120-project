@@ -24,8 +24,8 @@ const Header = ({ onSettingsClick }) => {
             <img src={logo} alt="App Logo" className="header-logo" />
           </button>
 
-          <div className="header-button-wrapper">
-            <div className="header-shadow" />
+          <div className="button-wrapper primary-button-shadow">
+            <div className="button-shadow" />
             <button className="header-button" onClick={handleHomeClick}>
               <FontAwesomeIcon icon={faBars} className="header-icon" />
               <span className="header-text">Menu</span>
@@ -33,7 +33,7 @@ const Header = ({ onSettingsClick }) => {
           </div>
         </div>
 
-        <div className="header-button-wrapper">
+        <div className="button-wrapper">
           <AccessibilityMenu />
         </div>
       </div>

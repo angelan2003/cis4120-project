@@ -1,10 +1,12 @@
-.button-wrapper {
-    position: relative;
-    display: inline-block;
-  }
+.light-mode .button-wrapper.primary-button-shadow .audio-button-shadow {
+  background-color: #0033ff;
+}
+
+.dark-mode .button-wrapper.primary-button-shadow .audio-button-shadow {
+  background-color: #FADC48;
+}
   
-  .word-option-button-shadow {
-    background-color: #FADC48;
+.audio-button-shadow {
     position: absolute;
     top: 8px;
     left: -8px;
@@ -12,9 +14,9 @@
     height: 100%;
     border-radius: 12px;
     z-index: 0;
-  }
+}
   
-  .square-button {
+.square-button {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,24 +24,22 @@
     justify-content: center;
     width: 220px;
     height: 220px;
-    background-color: black;
-    color: white;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-size: 25px;
     font-weight: bold;
-    border: 2px solid white;
+    border: 2px solid;
     border-radius: 12px;
     padding: 16px;
     z-index: 1;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
-  }
+}
   
-  .square-text {
+.square-text {
     margin-top: 12px;
-  }
+}
   
-  .square-icon {
+.square-icon {
     font-size: 45px;
-  }
+}
   
