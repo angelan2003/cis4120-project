@@ -19,8 +19,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/WelcomePage" element={<WelcomePage />} />
+          <Route path="/" element={<WelcomePage />} />
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/SpellPage" element={<SpellPage />} />
           <Route path="/IncorrectSpellingPage" element={<IncorrectSpellingPage correctWord={''} userAnswer={''} />} />
