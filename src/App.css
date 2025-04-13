@@ -62,8 +62,26 @@
   background-color: #0033ff;
 }
 
+.light-mode .button-wrapper.secondary-button-shadow .button-shadow {
+  background-color: #004d70;
+}
+
+.light-mode .button-wrapper.submit-button-shadow .button-shadow {
+  background-color: #006400;
+}
+
 .dark-mode .button-wrapper.primary-button-shadow .button-shadow {
   background-color: #FADC48;
 }
+
+.dark-mode .button-wrapper.secondary-button-shadow .button-shadow {
+  background-color: #00FFFF;
+}
+
+.dark-mode .button-wrapper.submit-button-shadow .button-shadow {
+  background-color: #40FF80;
+}
+
+
 
 

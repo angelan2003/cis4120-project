@@ -129,14 +129,14 @@ const SpellPage = () => {
       </div>
       <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
       <div className="action-buttons">
-        <div className="button-wrapper green-shadow">
+        <div className="button-wrapper primary-button-shadow">
           <div className="button-shadow" />
           <button className="action-button" onClick={handleSubmit}>
             Submit
           </button>
         </div>
 
-        <div className="button-wrapper blue-shadow">
+        <div className="button-wrapper secondary-button-shadow">
           <div className="button-shadow" />
           <button className="action-button" onClick={handleNextWord}>
             Skip

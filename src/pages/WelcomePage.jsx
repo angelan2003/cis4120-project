@@ -20,7 +20,7 @@ const WelcomePage = () => {
             </p>
         </div>
       <div className="home-buttons">
-        <div className="button-wrapper yellow-shadow" style={{ marginTop: "10px" }}>
+        <div className="button-wrapper primary-button-shadow" style={{ marginTop: "10px" }}>
           <div className="button-shadow" />
           <button className="home-button" onClick={handleStart}>
             Get Started

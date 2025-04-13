@@ -15,7 +15,7 @@ const CorrectPage = ({ correctWord, onNextWord }) => {
        <p> {correctWord.toUpperCase()} </p>
       </header>
       <div>
-        <div className="button-wrapper">
+        <div className="button-wrapper submit-button-shadow">
           <div className="button-shadow" />
           <button className="action-button" style={{ margin: '20px' }} onClick={onNextWord}>
             Next Word

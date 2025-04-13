@@ -5,10 +5,10 @@ import '../pages/SpellPage.css';
 const CorrectSpellingPage = ({ correctWord, onNextWord }) => {
   return (
     <div className="App">
-      <header className="Spell-header" style={{ margin: '90px', padding: 0, color: "white"}}>
+      <header className="Spell-header" style={{ margin: '90px', padding: 0 }}>
         <p >Correct Spelling:</p>
       </header>
-      <header className="Spell-header" style={{color: "white"}}>
+      <header className="Spell-header">
         <p>{correctWord.toUpperCase().split('').join(' ')}</p>
       </header>
       <div>

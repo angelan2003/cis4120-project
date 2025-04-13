@@ -33,8 +33,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
               textAlign: 'center',
               fontSize: '40px',
               fontWeight: 'bold',
-              color: 'white',
-              border: '2px solid white'
+              border: '2px solid'
 
             }}
             aria-placeholder={ariaLabel}
@@ -51,7 +50,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
           <p>Incorrect Spelling</p>
         </div>
         <div style={{ textAlign: 'center'}}>
-          <FontAwesomeIcon icon={faXmark} size="10x" style={{ color: "#ffffff"}} />
+          <FontAwesomeIcon icon={faXmark} size="10x" />
         </div>  
         <div style={{ marginTop: '10px' }}>
           {renderLetterComparison()}
@@ -61,7 +60,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
         </p>
 
         <div className="action-buttons">
-          <div className="button-wrapper green-shadow">
+          <div className="button-wrapper primary-button-shadow">
             <div className="button-shadow" />
               <button 
                 className="action-button"
@@ -71,7 +70,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
               </button>
             </div>
 
-          <div className="button-wrapper blue-shadow">
+          <div className="button-wrapper secondary-button-shadow">
             <div className="button-shadow" />
               <button 
                 className="action-button"
