@@ -4,6 +4,7 @@ import SpellPage from './pages/SpellPage';
 import IncorrectSpellingPage from './pages/IncorrectPage';
 import CorrectPage from './pages/CorrectPage';
 import HomePage from './pages/HomePage';
+import WelcomePage from './pages/WelcomePage';
 import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/WelcomePage" element={<WelcomePage />} />
           <Route path="/HomePage" element={<HomePage />} />
           <Route path="/SpellPage" element={<SpellPage />} />
           <Route path="/IncorrectSpellingPage" element={<IncorrectSpellingPage correctWord={''} userAnswer={''} />} />

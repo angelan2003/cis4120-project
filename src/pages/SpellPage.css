@@ -172,4 +172,20 @@
 .home-button.selected {
     background-color: #333333;
   }
+
+.welcome-text{
+    font-size: 34px;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
   
+.welcome-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 20px;
+}
