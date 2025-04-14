@@ -5,7 +5,7 @@ import './SpellPage.css';
 const WelcomePage = () => {
   const navigate = useNavigate();
   const handleStart = () => {
-    navigate('/');
+    navigate('/HomePage');
   };
 
   return (

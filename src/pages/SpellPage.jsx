@@ -123,9 +123,7 @@ const SpellPage = () => {
     <div className="App">
       <p className="Word-progress">Word {currentIndex + 1} out of {words.length}</p>
       <div className="audio-button-row">
-        <WordOptionButton icon={faVolumeHigh} label="Play word" textToSpeak={currentWord.word} />
-        <WordOptionButton icon={faComment} label="Sentence" textToSpeak={currentWord.sentence} />
-        <WordOptionButton icon={faBookOpen} label="Definition" textToSpeak={currentWord.definition} />
+        <WordOptionButton icon={faVolumeHigh} label="Play Word and Sentence" textToSpeak={`${currentWord.word}. ${currentWord.sentence}`}  />
       </div>
       <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
       <div className="action-buttons">

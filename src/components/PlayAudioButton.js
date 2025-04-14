@@ -17,23 +17,13 @@ const speak = (text) => {
 };
 
 
-const PlayAudioButton = ({ word, sentence, definition }) => {
+const PlayAudioButton = ({ word, sentence }) => {
+  const text = `${word}. ${sentence}`;
   return (
     <div className="Audio-button-container">
-      {/* Button to play the word */}
-      <button className="Audio-button" onClick={() => speak(word)}>
+      <button className="Audio-button" onClick={() => speak(text)}>
         <FontAwesomeIcon icon={faVolumeHigh} size="2xl" style={{ color: "#000000", marginRight: "10px" }} />
-        Play word
-      </button>
-      {/* Button to hear it in a sentence */}
-      <button className="Audio-button" onClick={() => speak(sentence)}>
-        <FontAwesomeIcon icon={faComment} size="2xl" style={{ color: "#000000", marginRight: "10px" }} />
-        Sentence
-      </button>
-      {/* Button to hear definition */}
-      <button className="Audio-button" onClick={() => speak(definition)}>
-        <FontAwesomeIcon icon={faBookOpen} size="2xl" style={{ color: "#000000", marginRight: "10px" }} />
-        Definition
+        Play Word + Sentence
       </button>
     </div>
   );
