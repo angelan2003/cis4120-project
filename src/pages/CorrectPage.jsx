@@ -4,16 +4,19 @@ import '../pages/SpellPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-const CorrectPage = ({ correctWord, onNextWord }) => {
+const CorrectPage = ({ correctWord, onNextWord, streak }) => {
   return (
     <div className="App">
-      <header className="Spell-header" style={{ marginTop: 100, padding: 0}}>
-        <p >Correct!</p>
+      <header className="Spell-header" style={{ marginTop: 50, padding: 0 }}>
+        <p>Correct!</p>
       </header>
       <FontAwesomeIcon icon={faCheck} size="10x" />
       <header className="Spell-header">
-       <p> {correctWord.toUpperCase()} </p>
+        <p>{correctWord.toUpperCase()}</p>
       </header>
+      {streak > 0 && (
+        <p className="Word-progress">🔥 Streak: {streak}</p>
+      )}
       <div>
         <div className="button-wrapper">
           <div className="button-shadow" />
@@ -25,4 +28,5 @@ const CorrectPage = ({ correctWord, onNextWord }) => {
     </div>
   );
 };
+
 export default CorrectPage;

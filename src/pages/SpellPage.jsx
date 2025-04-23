@@ -21,11 +21,10 @@ const importWordList = (difficulty, category) => {
 };
 
 const SpellPage = () => {
+  const [streak, setStreak] = useState(0);
   const location = useLocation();
   const { difficulty, category } = location.state || {};
-
   const words = importWordList(difficulty, category);
-
   const [answer, setAnswer] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentWord = words[currentIndex];
@@ -62,13 +61,13 @@ const SpellPage = () => {
   const handleSubmit = () => {
     const cleanedAnswer = answer.trim().toLowerCase();
     const cleanedWord = currentWord.word.toLowerCase();
-
     if (cleanedAnswer === cleanedWord) {
       setShowCorrectPage(true);
+      setStreak(prev => prev + 1);
     } else {
       const newTryCount = tryCount + 1;
       setTryCount(newTryCount);
-
+      setStreak(0);
       if (newTryCount >= 3) {
         setShowCorrectSpelling(true);
         setShowIncorrect(false);
@@ -115,6 +114,7 @@ const SpellPage = () => {
       <CorrectPage
         correctWord={currentWord.word}
         onNextWord={handleNextWord}
+        streak={streak}
       />
     );
   }
@@ -127,7 +127,13 @@ const SpellPage = () => {
         <WordOptionButton icon={faComment} label="Sentence" textToSpeak={currentWord.sentence} />
         <WordOptionButton icon={faBookOpen} label="Definition" textToSpeak={currentWord.definition} />
       </div>
-      <AnswerInput value={answer} onChange={(e) => setAnswer(e.target.value)} />
+      <AnswerInput
+        value={answer}
+        onChange={(e) => setAnswer(e.target.value)}
+        onKeyDown={(e) => {if (e.key === 'Enter') {
+            handleSubmit();
+          }}}
+      />
       <div className="action-buttons">
         <div className="button-wrapper primary-button-shadow">
           <div className="button-shadow" />

@@ -2,7 +2,7 @@
 import React from 'react';
 import '../App.css';
 
-const AnswerInput = ({ value, onChange }) => {
+const AnswerInput = ({ value, onChange, onKeyDown }) => {
   return (
     <input
       type="text"
@@ -10,6 +10,7 @@ const AnswerInput = ({ value, onChange }) => {
       placeholder="Type your answer"
       value={value}
       onChange={onChange}
+      onKeyDown={onKeyDown}
       spellCheck="false"
     />
   );

@@ -5,6 +5,12 @@
 .dark-mode .button-wrapper.primary-button-shadow .audio-button-shadow {
   background-color: #FADC48;
 }
+
+.square-button:hover {
+  background-color: #222;
+  transform: translateY(-4px);
+  color: white;
+}
   
 .audio-button-shadow {
     position: absolute;

@@ -36,7 +36,7 @@
     padding: 30px 20px;
 }
 
-.audio-button:hover {
+.Audio-button:hover {
     background-color: #222;
     transform: translateY(-2px);
 }
