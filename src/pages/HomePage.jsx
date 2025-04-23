@@ -27,6 +27,13 @@ const HomePage = () => {
     });
   };
 
+  const categories = [
+    { label: 'Homophones', value: 'homophones' },
+    { label: 'Tricky to Spell by Sound', value: 'tricky' },
+    { label: 'Travel', value: 'travel' },
+    { label: 'Business', value: 'business' }
+  ];
+
   return (
     <div className="home-container">
       <h2 className="difficulty-header">Choose a Difficulty</h2>
@@ -46,14 +53,14 @@ const HomePage = () => {
 
       <h2 className="difficulty-header">Choose a Category</h2>
       <div className="home-buttons">
-        {['Homophones','General', 'Travel', 'Business'].map((cat) => (
-          <div key={cat} className="button-wrapper secondary-button-shadow">
+        {categories.map(({ label, value }) => (
+          <div key={label} className="button-wrapper secondary-button-shadow">
             <div className="button-shadow" />
             <button
-              className={`home-button ${selectedCategory === cat.toLowerCase() ? 'selected' : ''}`}
-              onClick={() => handleSelectCategory(cat.toLowerCase())}
+              className={`home-button ${selectedCategory === value ? 'selected' : ''}`}
+              onClick={() => handleSelectCategory(value)}
             >
-              {cat}
+              {label}
             </button>
           </div>
         ))}
@@ -65,7 +72,7 @@ const HomePage = () => {
         </p>
       )}
 
-    <div className="home-buttons">
+      <div className="home-buttons">
         <div className="button-wrapper primary-button-shadow" style={{ marginTop: "10px" }}>
           <div className="button-shadow" />
           <button className="home-button" onClick={handleSubmit} disabled={!difficulty || !category}>
