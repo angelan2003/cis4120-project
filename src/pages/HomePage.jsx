@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SpellPage.css';
+import './HomePage.css';
 
 const HomePage = () => {
   const [difficulty, setDifficulty] = useState('');
@@ -46,7 +46,7 @@ const HomePage = () => {
 
       <h2 className="difficulty-header">Choose a Category</h2>
       <div className="home-buttons">
-        {['General', 'Travel', 'Business'].map((cat) => (
+        {['Homophones','General', 'Travel', 'Business'].map((cat) => (
           <div key={cat} className="button-wrapper secondary-button-shadow">
             <div className="button-shadow" />
             <button

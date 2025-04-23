@@ -1,0 +1,33 @@
+const easyHomophones = [
+    { word: "to", sentence: "She went to the store.", definition: "Indicates direction or place." },
+    { word: "too", sentence: "I want to go too.", definition: "Also; in addition." },
+    { word: "two", sentence: "He has two cats.", definition: "The number 2." },
+    { word: "be", sentence: "Try to be quiet.", definition: "To exist or live." },
+    { word: "bee", sentence: "A bee landed on the flower.", definition: "A flying insect that makes honey." },
+    { word: "see", sentence: "Can you see the stars?", definition: "To perceive with the eyes." },
+    { word: "sea", sentence: "They swam in the sea.", definition: "A large body of salt water." },
+    { word: "hear", sentence: "Did you hear that noise?", definition: "To perceive sound." },
+    { word: "here", sentence: "Come over here.", definition: "In this place." },
+    { word: "no", sentence: "No, I don’t like broccoli.", definition: "A negative response." },
+    { word: "know", sentence: "I know the answer.", definition: "To be aware of something." },
+    { word: "one", sentence: "She has one sister.", definition: "The number 1." },
+    { word: "won", sentence: "He won the race.", definition: "Past tense of 'win'." },
+    { word: "sun", sentence: "The sun is shining.", definition: "The star at the center of our solar system." },
+    { word: "son", sentence: "He has one son.", definition: "A male child." },
+    { word: "blue", sentence: "The sky is blue.", definition: "A color." },
+    { word: "blew", sentence: "She blew out the candle.", definition: "Past tense of 'blow'." },
+    { word: "bear", sentence: "We saw a bear at the zoo.", definition: "A large, heavy animal with thick fur." },
+    { word: "bare", sentence: "He walked on the bare floor.", definition: "Uncovered or exposed." },
+    { word: "flower", sentence: "She picked a flower.", definition: "A colorful plant part that blooms." },
+    { word: "flour", sentence: "Add flour to the recipe.", definition: "Powder used in baking." },
+    { word: "night", sentence: "The stars shine at night.", definition: "The time of darkness between sunset and sunrise." },
+    { word: "knight", sentence: "The knight rode a horse.", definition: "A soldier of high rank in the past." },
+    { word: "write", sentence: "Please write your name.", definition: "To mark words on a surface." },
+    { word: "right", sentence: "Turn right at the corner.", definition: "The direction opposite of left." },
+    { word: "sail", sentence: "We sail across the lake.", definition: "To travel by boat." },
+    { word: "sale", sentence: "There’s a sale at the store.", definition: "A period of discounted prices." },
+    { word: "peace", sentence: "We hope for world peace.", definition: "Freedom from conflict." },
+    { word: "piece", sentence: "I want a piece of cake.", definition: "A part of something." }
+];
+
+export default easyHomophones;
