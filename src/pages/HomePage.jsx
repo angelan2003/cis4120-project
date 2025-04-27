@@ -30,8 +30,7 @@ const HomePage = () => {
   const categories = [
     { label: 'Homophones', value: 'homophones' },
     { label: 'Tricky to Spell by Sound', value: 'tricky' },
-    { label: 'Travel', value: 'travel' },
-    { label: 'Business', value: 'business' }
+    { label: 'Several Syllables', value: 'polysyllabic' },
   ];
 
   return (
