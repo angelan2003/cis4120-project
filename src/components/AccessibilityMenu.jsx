@@ -9,8 +9,6 @@ const AccessibilityMenu = () => {
   const menuRef = useRef(null);
 
   const {
-    isLargeText,
-    setIsLargeText,
     isDarkMode,
     setIsDarkMode
   } = useAccessibility();
@@ -56,15 +54,6 @@ const AccessibilityMenu = () => {
 
       {isOpen && (
         <div className="accessibility-dropdown">
-          <label className="checkbox-option">
-            <input
-              type="checkbox"
-              checked={isLargeText}
-              onChange={() => setIsLargeText(!isLargeText)}
-            />
-            {renderCheckbox(isLargeText)}
-            <span>Large Text</span>
-          </label>
 
           <label className="checkbox-option">
             <input
