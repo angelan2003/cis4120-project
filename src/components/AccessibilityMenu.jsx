@@ -1,23 +1,21 @@
+// src/components/AccessibilityMenu.jsx
 import React, { useState, useRef, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon }      from '@fortawesome/react-fontawesome';
 import { faAngleDown, faCheck } from '@fortawesome/free-solid-svg-icons';
 import './AccessibilityMenu.css';
-import { useAccessibility } from '../contexts/AccessibilityContext';
+import { useAccessibility }      from '../contexts/AccessibilityContext';
 
 const AccessibilityMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
 
-  const {
-    isDarkMode,
-    setIsDarkMode
-  } = useAccessibility();
+  const { isDarkMode, setIsDarkMode } = useAccessibility();
 
-  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const toggleMenu = () => setIsOpen(open => !open);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = e => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
@@ -25,22 +23,24 @@ const AccessibilityMenu = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleThemeToggle = (theme) => {
-    if (theme === 'light') {
-      setIsDarkMode(false);
-    } else {
-      setIsDarkMode(true);
-    }
+  const handleThemeToggle = theme => {
+    // flip the theme
+    setIsDarkMode(theme === 'dark');
+    // **auto-close the dropdown**
+    setIsOpen(false);
   };
 
-  const renderCheckbox = (checked) => (
+  const renderCheckbox = checked => (
     <span className={`custom-checkbox ${checked ? 'checked' : ''}`}>
       {checked && <FontAwesomeIcon icon={faCheck} className="checkbox-icon" />}
     </span>
   );
 
   return (
-    <div className={`accessibility-menu-wrapper primary-button-shadow ${isOpen ? 'menu-open' : ''}`} ref={menuRef}>
+    <div
+      ref={menuRef}
+      className={`accessibility-menu-wrapper primary-button-shadow ${isOpen ? 'menu-open' : ''}`}
+    >
       <div className="header-shadow" />
       <button
         className={`header-button ${isOpen ? 'open' : ''}`}
@@ -48,13 +48,14 @@ const AccessibilityMenu = () => {
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
-        <span className="header-text">Text Size & Contrast</span>
+        <span className="header-text">Text Contrast</span>
         <FontAwesomeIcon icon={faAngleDown} className="header-icon" />
       </button>
 
       {isOpen && (
         <div className="accessibility-dropdown">
 
+          {/* Light Mode */}
           <label className="checkbox-option">
             <input
               type="checkbox"
@@ -65,6 +66,7 @@ const AccessibilityMenu = () => {
             <span>Light Mode</span>
           </label>
 
+          {/* Dark Mode */}
           <label className="checkbox-option">
             <input
               type="checkbox"
