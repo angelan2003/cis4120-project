@@ -152,7 +152,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
             textAlign: 'center',
             fontSize: '40px',
             fontWeight: 'bold',
-            border: '2px dashed black'
+            border: '2px dashed'
           }}
         >
           {extraLetter}
@@ -171,10 +171,6 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
         <FontAwesomeIcon icon={faXmark} size="10x"  aria-hidden="true"/>
       </div>
 
-      <div style={{ marginTop: '10px' }}>
-        {renderLetterComparison()}
-      </div>
-
       <p className="Word-progress">
         You got {correctCount} out of {correctLen} letters correct!
       </p>
@@ -184,6 +180,10 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
           Your answer is {extraCount} letter{extraCount > 1 ? 's' : ''} too long.
         </p>
       )}
+
+      <div style={{ marginTop: '10px' }}>
+        {renderLetterComparison()}
+      </div>
 
       <div className="action-buttons">
         <div className="button-wrapper primary-button-shadow">
