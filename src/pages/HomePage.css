@@ -20,20 +20,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
     margin: 20px auto;
     padding: 0 16px;
-    width: 100%;
   }
   
   .home-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 70px;
     padding: 0 36px;
     font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: bold;
     background-color: black;
     color: white;
@@ -41,8 +40,8 @@
     border-radius: 8px;
     z-index: 1;
     cursor: pointer;
-    width: auto; /* Allow the button to expand */
-    min-width: 300px; /* Set a minimum width */
+    width: auto; 
+    min-width: 150px;
     text-align: center;
   }
   

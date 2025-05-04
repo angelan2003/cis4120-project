@@ -66,18 +66,20 @@ const HomePage = () => {
       </div>
 
       {(difficulty && category) && (
-        <p className="Spell-header" style={{ fontSize: '24px', marginTop: '20px' }}>
+        <p className="Spell-header" style={{ fontSize: '24px', marginBottom: '-15px' }}>
           You selected: <strong>{difficulty}</strong> difficulty in <strong>{category}</strong> category.
         </p>
       )}
 
-      <div className="home-buttons">
-        <div className="button-wrapper primary-button-shadow" style={{ marginTop: "10px" }}>
+      <div className="button-wrapper primary-button-shadow"
+        style={{ marginTop: '50px' }} >
           <div className="button-shadow" />
-          <button className="home-button" onClick={handleSubmit} disabled={!difficulty || !category}>
+          <button
+            className="action-button"
+            onClick={handleSubmit}
+          >
             Submit
-          </button>
-        </div>
+        </button>
       </div>
     </div>
   );
