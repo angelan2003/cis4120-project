@@ -17,10 +17,13 @@ const CorrectPage = ({ correctWord, onNextWord, streak }) => {
       {streak > 0 && (
         <p className="Word-progress">🔥 Streak: {streak}</p>
       )}
-      <div>
-        <div className="button-wrapper">
+      <div className="action-buttons">
+        <div className="button-wrapper primary-button-shadow">
           <div className="button-shadow" />
-          <button className="action-button" style={{ margin: '20px' }} onClick={onNextWord}>
+          <button
+            className="action-button"
+            onClick={onNextWord}
+          >
             Next Word
           </button>
         </div>
