@@ -15,7 +15,7 @@ const WelcomePage = () => {
             <p> SpellRight is an app that can be used with your favorite screen reader to practice spelling. We recommend using Mac's
                 VoiceOver functonality which can be found in by going to Settings-Accessibility-VoiceOver. Once activating VoiceOver, navigate the
                 screen by using the control + options keys and press the right arrow to go to the next element on the screen. Personalize your 
-                expereince by choosing categories of words and a difficulty level. Listen to words, hear them in sentences, and then test your 
+                experience by choosing categories of words and a difficulty level. Listen to words, hear them in sentences, and then test your 
                 knowledge by typing the spelling and submit your answer for feedback. 
             </p>
         </div>

@@ -10,7 +10,7 @@ const CorrectPage = ({ correctWord, onNextWord, streak }) => {
       <header className="Spell-header" style={{ marginTop: 50, padding: 0 }}>
         <p>Correct!</p>
       </header>
-      <FontAwesomeIcon icon={faCheck} size="10x" />
+      <FontAwesomeIcon icon={faCheck} size="10x" aria-hidden="true"/>
       <header className="Spell-header">
         <p>{correctWord.toUpperCase()}</p>
       </header>
