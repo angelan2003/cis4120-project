@@ -5,8 +5,6 @@ import './CompletionPage.css';
 const CompletionPage = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
-
-  // Destructure the values we expect from SpellPage’s navigate call:
   const { correctCount = 0, totalWords = 0, difficulty, category } = state || {};
 
   const percent = totalWords > 0
@@ -18,39 +16,35 @@ const CompletionPage = () => {
   };
 
   const handleTryAgain = () => {
-    // re-run the same list:
     navigate('/SpellPage', { state: { difficulty, category } });
   };
 
   return (
     <div className="completion-container">
-      <h1 className="completion-header">Result</h1>
+      <div className="completion-box">
+        <header className="completion-box__header">
+          <h1 className="completion-header">Result</h1>
+        </header>
+        <div className="completion-box__divider" />
 
-      <p className="completion-score">
-        {correctCount} / {totalWords}
-      </p>
-
-      <p className="completion-percent">
-        You got {percent}% of the answers correct.
-      </p>
+        <div className="completion-box__body">
+          <p className="completion-score">{correctCount} / {totalWords}</p>
+          <p className="completion-percent">
+            You got {percent}% of the answers correct.
+          </p>
+        </div>
+      </div>
 
       <div className="completion-buttons">
         <div className="button-wrapper primary-button-shadow">
           <div className="button-shadow" />
-          <button
-            className="action-button"
-            onClick={handleContinue}
-          >
+          <button className="action-button" onClick={handleContinue}>
             Continue
           </button>
         </div>
-
         <div className="button-wrapper secondary-button-shadow">
           <div className="button-shadow" />
-          <button
-            className="action-button"
-            onClick={handleTryAgain}
-          >
+          <button className="action-button" onClick={handleTryAgain}>
             Try Again
           </button>
         </div>
@@ -60,3 +54,4 @@ const CompletionPage = () => {
 };
 
 export default CompletionPage;
+

@@ -2,37 +2,68 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-    margin: 40px 20px;
+    padding: 40px 20px;
+  }
+  
+  .completion-box {
+    width: 100%;
+    max-width: 400px;
+    background: inherit;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .completion-box__header {
+    padding: 16px;
+    text-align: center;
   }
   
   .completion-header {
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-    font-size: 64px;
-    font-weight: bold;
-    color: inherit; 
     margin: 0;
-  }
-  
-  .completion-score {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-size: 48px;
     font-weight: bold;
     color: inherit;
+  }
+
+  .completion-box__divider {
+    height: 2px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+  
+  .completion-box__body {
+    padding: 40px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .completion-score {
     margin: 0;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: inherit;
   }
   
   .completion-percent {
+    margin: 0;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-size: 24px;
-    text-align: center;
-    margin: 0;
+    color: inherit;
   }
-  
+
   .completion-buttons {
     display: flex;
     gap: 110px;
-    margin-top: 16px;
+    margin-top: 24px;
   }
+  
   
   
