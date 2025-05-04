@@ -1,0 +1,38 @@
+.completion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin: 40px 20px;
+  }
+  
+  .completion-header {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: inherit; 
+    margin: 0;
+  }
+  
+  .completion-score {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: inherit;
+    margin: 0;
+  }
+  
+  .completion-percent {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .completion-buttons {
+    display: flex;
+    gap: 110px;
+    margin-top: 16px;
+  }
+  
+  

@@ -5,6 +5,7 @@ import IncorrectSpellingPage from './pages/IncorrectPage';
 import CorrectPage from './pages/CorrectPage';
 import HomePage from './pages/HomePage';
 import WelcomePage from './pages/WelcomePage';
+import CompletionPage from './pages/CompletionPage';
 import './App.css';
 import Header from './components/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/IncorrectSpellingPage" element={<IncorrectSpellingPage correctWord={''} userAnswer={''} />} />
           <Route path="/CorrectSpellingPage" element={<CorrectSpellingPage correctWord={''} />} />
           <Route path="/CorrectPage" element={<CorrectPage correctWord={''} />} />
+          <Route path="/Completion" element={<CompletionPage />} />
         </Routes>
       </Router>
     </div>

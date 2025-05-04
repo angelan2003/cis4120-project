@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PlayAudioButton from '../components/PlayAudioButton';
 import WordOptionButton from '../components/WordOptionButton';
 import { faVolumeHigh, faComment, faBookOpen } from '@fortawesome/free-solid-svg-icons';
@@ -9,66 +9,59 @@ import CorrectSpellingPage from './CorrectedSpellingPage';
 import CorrectPage from './CorrectPage';
 import './SpellPage.css';
 
-// 🆕 Utility for loading wordlist dynamically
 const importWordList = (difficulty, category) => {
   try {
-    // Dynamically require based on pattern
     return require(`../wordlists/${difficulty}-${category}.js`).default;
-  } catch (error) {
-    console.error(`Wordlist for ${difficulty}-${category} not found.`);
+  } catch {
+    console.error(`Missing wordlist: ${difficulty}-${category}`);
     return [];
   }
 };
 
 const SpellPage = () => {
-  const [streak, setStreak] = useState(0);
-  const location = useLocation();
-  const { difficulty, category } = location.state || {};
+  const navigate  = useNavigate();
+  const { state } = useLocation();
+  const { difficulty, category } = state || {};
+
+  // load our list
   const words = importWordList(difficulty, category);
-  const [answer, setAnswer] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const currentWord = words[currentIndex];
-  const [showIncorrect, setShowIncorrect] = useState(false);
-  const [tryCount, setTryCount] = useState(0);
+  const totalWords = words.length;
+
+  // quiz state
+  const [currentIndex, setCurrentIndex]     = useState(0);
+  const [answer, setAnswer]                 = useState('');
+  const [tryCount, setTryCount]             = useState(0);
+  const [showIncorrect, setShowIncorrect]   = useState(false);
   const [showCorrectSpelling, setShowCorrectSpelling] = useState(false);
-  const [showCorrectPage, setShowCorrectPage] = useState(false);
+  const [showCorrectPage, setShowCorrectPage]         = useState(false);
 
+  // track how many were right
+  const [correctCount, setCorrectCount]     = useState(0);
+
+  // sanity checks
   if (!difficulty || !category) {
-    return <p style={{ color: 'white' }}>Missing difficulty or category. Go back and select both.</p>;
+    return <p style={{ color: 'white' }}>Missing difficulty/category — go back.</p>;
+  }
+  if (totalWords === 0) {
+    return <p style={{ color: 'white' }}>No words found for that selection.</p>;
   }
 
-  if (!words.length) {
-    return <p style={{ color: 'white' }}>No words available for this selection.</p>;
-  }
-
-  const handleRetry = () => {
-    setShowIncorrect(false);
-    setShowCorrectSpelling(false);
-  };
-
-  const handleShowCorrect = () => {
-    setShowCorrectSpelling(true);
-    setShowIncorrect(false);
-  };
-
-  const handleTryAgainFromCorrect = () => {
-    setTryCount(prev => prev + 1);
-    setShowCorrectSpelling(false);
-    setShowIncorrect(false);
-    setAnswer('');
-  };
-
+  // user clicked “submit”
   const handleSubmit = () => {
     const cleanedAnswer = answer.trim().toLowerCase();
-    const cleanedWord = currentWord.word.toLowerCase();
+    const cleanedWord   = words[currentIndex].word.toLowerCase();
+
     if (cleanedAnswer === cleanedWord) {
+      // correct!
+      setCorrectCount(c => c + 1);
       setShowCorrectPage(true);
-      setStreak(prev => prev + 1);
     } else {
-      const newTryCount = tryCount + 1;
-      setTryCount(newTryCount);
-      setStreak(0);
-      if (newTryCount >= 3) {
+      // not correct
+      const nextTry = tryCount + 1;
+      setTryCount(nextTry);
+
+      if (nextTry >= 3) {
+        // reveal correct spelling page
         setShowCorrectSpelling(true);
         setShowIncorrect(false);
       } else {
@@ -77,8 +70,43 @@ const SpellPage = () => {
     }
   };
 
+  // user wants to retry (from IncorrectPage)
+  const handleRetry = () => {
+    setTryCount(0);
+    setShowIncorrect(false);
+  };
+
+  // user wants to see correct (from IncorrectPage)
+  const handleShowCorrect = () => {
+    setShowCorrectSpelling(true);
+    setShowIncorrect(false);
+  };
+
+  // user tries again from correct‐spelling hint
+  const handleTryAgainFromCorrect = () => {
+    setTryCount(0);
+    setShowCorrectSpelling(false);
+    setShowIncorrect(false);
+    setAnswer('');
+  };
+
+  // advance to next word *or* finish quiz
   const handleNextWord = () => {
-    setCurrentIndex(prev => prev + 1);
+    const nextIndex = currentIndex + 1;
+    if (nextIndex >= totalWords) {
+      // out of words → go to Completion page
+      return navigate('/Completion', {
+        state: {
+          correctCount,
+          totalWords,
+          difficulty,
+          category
+        }
+      });
+    }
+
+    // otherwise move on
+    setCurrentIndex(nextIndex);
     setAnswer('');
     setTryCount(0);
     setShowCorrectPage(false);
@@ -86,10 +114,11 @@ const SpellPage = () => {
     setShowIncorrect(false);
   };
 
+  // Intermediate screens:
   if (showIncorrect) {
     return (
       <IncorrectSpellingPage
-        correctWord={currentWord.word}
+        correctWord={words[currentIndex].word}
         userAnswer={answer}
         onRetry={handleRetry}
         onShowCorrect={handleShowCorrect}
@@ -101,7 +130,7 @@ const SpellPage = () => {
   if (showCorrectSpelling) {
     return (
       <CorrectSpellingPage
-        correctWord={currentWord.word}
+        correctWord={words[currentIndex].word}
         onTryAgain={handleTryAgainFromCorrect}
         tryCount={tryCount}
         onNextWord={handleNextWord}
@@ -112,39 +141,61 @@ const SpellPage = () => {
   if (showCorrectPage) {
     return (
       <CorrectPage
-        correctWord={currentWord.word}
+        correctWord={words[currentIndex].word}
         onNextWord={handleNextWord}
-        streak={streak}
       />
     );
   }
 
+  // Main quiz UI
+  const currentWord = words[currentIndex];
   return (
     <div className="App">
-      <p className="Word-progress">Word {currentIndex + 1} out of {words.length}</p>
+      <p className="Word-progress">
+        Word {currentIndex + 1} out of {totalWords}
+      </p>
+
       <div className="audio-button-row">
-        <WordOptionButton icon={faVolumeHigh} label="Play word" textToSpeak={currentWord.word} />
-        <WordOptionButton icon={faComment} label="Sentence" textToSpeak={currentWord.sentence} />
-        <WordOptionButton icon={faBookOpen} label="Definition" textToSpeak={currentWord.definition} />
+        <WordOptionButton
+          icon={faVolumeHigh}
+          label="Play word"
+          textToSpeak={currentWord.word}
+        />
+        <WordOptionButton
+          icon={faComment}
+          label="Sentence"
+          textToSpeak={currentWord.sentence}
+        />
+        <WordOptionButton
+          icon={faBookOpen}
+          label="Definition"
+          textToSpeak={currentWord.definition}
+        />
       </div>
+
       <AnswerInput
         value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
-        onKeyDown={(e) => {if (e.key === 'Enter') {
-            handleSubmit();
-          }}}
+        onChange={e => setAnswer(e.target.value)}
+        onKeyDown={e => e.key === 'Enter' && handleSubmit()}
       />
+
       <div className="action-buttons">
         <div className="button-wrapper primary-button-shadow">
           <div className="button-shadow" />
-          <button className="action-button" onClick={handleSubmit}>
+          <button
+            className="action-button"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
         </div>
 
         <div className="button-wrapper secondary-button-shadow">
           <div className="button-shadow" />
-          <button className="action-button" onClick={handleNextWord}>
+          <button
+            className="action-button"
+            onClick={handleNextWord}
+          >
             Skip
           </button>
         </div>
