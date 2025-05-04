@@ -168,7 +168,7 @@ const IncorrectSpellingPage = ({ correctWord, userAnswer, onRetry, onShowCorrect
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <FontAwesomeIcon icon={faXmark} size="10x"/>
+        <FontAwesomeIcon icon={faXmark} size="10x"  aria-hidden="true"/>
       </div>
 
       <div style={{ marginTop: '10px' }}>
